@@ -5,6 +5,7 @@ from tkinter import ttk
 # Cores
 cor1 = "#feffff" # white/branca
 cor2='#02c292'   # Azul
+cor3 = "#FF8C00" # DarkOrange
 fundo = "#000000" # black/preta
 
 # Funções
@@ -27,31 +28,31 @@ def pegar_cotacoes():
     
 janela = Tk()
 janela.title("Cotação Atual das Moedas")
-janela.geometry("405x300")
+janela.geometry("210x300")
 janela.config(bg=fundo)
 
 # Frames
 
-frame_tela = Frame(janela, width=235, height=50)
+frame_tela = Frame(janela, width=200, height=50)
 frame_tela.grid(column=0, row=0)
 
-frame_corpo = Frame(janela, width=405, height=275)
+frame_corpo = Frame(janela, width=200, height=275)
 frame_corpo.grid(column=0, row=1)
 
 # Texto inicial
 
-texto_orientacao = Label(frame_tela, text="Clique no botão para ver as cotações das moedas:", height=3, bg=cor2, fg=fundo, font=('Ivy','13','bold'), relief=RAISED)
+texto_orientacao = Label(frame_tela, text="Clique no botão para ver \n as cotações das moedas:", height=3, bg=cor3, fg=fundo, font=('Ivy','13','bold'), relief=RAISED)
 texto_orientacao.grid(column=0, row=0)
 
 #  Botão
 
-botao = Button(frame_corpo, text="Buscar cotações", command=pegar_cotacoes, width=15, height=2, bg=cor2, fg=fundo, font=('Ivy','13','bold'), relief=RAISED, overrelief=RIDGE)
-botao.place(x=125,y=35)
+botao = Button(frame_corpo, text="Buscar cotações", command=pegar_cotacoes, width=15, height=2, bg=cor3, fg=fundo, font=('Ivy','13','bold'), relief=RAISED, overrelief=RIDGE)
+botao.place(x=20,y=35)
 
 # Resultado
 
 texto_cotacoes = Label(frame_corpo, text="", fg=fundo, font=('Ivy','13','bold'))
-texto_cotacoes.place(x=130,y=100)
+texto_cotacoes.place(x=25,y=100)
 
 janela.mainloop()
 
